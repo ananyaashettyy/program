@@ -1,353 +1,63 @@
-
-
-
-git stat2)git branch feature-branch
-git checkout feature branch
-git add .
-get commit
-gir checkout master 
-git merge
-
-git stash
-git checkout
-stash apply
-
-3)clone fetch merge
-git clone
-git feature branch
-git checkout featurebranch
-fetch origin
-rebase origin
-
-git log
-git tag -a v1.0 -m
-tag v1.0
-2)git branch feature-branch
-git checkout feature branch
-git add .
-get commit
-gir checkout master 
-git merge
-
-git stash
-git checkout
-stash apply
-
-3)clone fetch merge
-git clone
-git feature branch
-git checkout featurebranch
-fetch origin
-rebase origin
-
-git log
-git tag -a v1.0 -m
-tag v1.0
-
-git status
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
-
-git status
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-gigit init
-git clone
-git add .
-git commit -m<"message">
-git push
-
-2)git branch feature-branch
-git checkout feature branch
-git add .
-get commit
-gir checkout master 
-git merge
-
-git stash
-git checkout
-stash apply
-
-3)clone fetch merge
-git clone
-git feature branch
-git checkout featurebranch
-fetch origin
-rebase origin
-
-git log
-git tag -a v1.0 -m
-tag v1.0
-2)git branch feature-branch
-git checkout feature branch
-git add .
-get commit
-gir checkout master 
-git merge
-
-git stash
-git checkout
-stash apply
-
-3)clone fetch merge
-git clone
-git feature branch
-git checkout featurebranch
-fetch origin
-rebase origin
-
-git log
-git tag -a v1.0 -m
-tag v1.0
-
-git status
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
-
-git stat2)git branch feature-branch
-git checkout feature branch
-git add .
-get commit
-gir checkout master 
-git merge
-
-git stash
-git checkout
-stash apply
-
-3)clone fetch merge
-git clone
-git feature branch
-git checkout featurebranch
-fetch origin
-rebase origin
-
-git log
-git tag -a v1.0 -m
-tag v1.0
-2)git branch feature-branch
-git checkout feature branch
-git add .
-get commit
-gir checkout master 
-git merge
-
-git stash
-git checkout
-stash apply
-
-3)clone fetch merge
-git clone
-git feature branch
-git checkout featurebranch
-fetch origin
-rebase origin
-
-git log
-git tag -a v1.0 -m
-tag v1.0
-
-git status
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
-
-git status
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
-us
-git log-oneline
-git cherry pick
-
-git commit_id
-gi
-git log
-git tag -a v1.0 -m
-tag v1.0
-
-git status
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
-
-git status
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-gigit init
-git clone
-git add .
-git commit -m<"message">
-git push
-
-2)git branch feature-branch
-git checkout feature branch
-git add .
-get commit
-gir checkout master 
-git merge
-
-git stash
-git checkout
-stash apply
-
-3)clone fetch merge
-git clone
-git feature branch
-git checkout featurebranch
-fetch origin
-rebase origin
-
-git log
-git tag -a v1.0 -m
-tag v1.0
-2)git branch feature-branch
-git checkout feature branch
-git add .
-get commit
-gir checkout master 
-git merge
-
-git stash
-git checkout
-stash apply
-
-3)clone fetch merge
-git clone
-git feature branch
-git checkout featurebranch
-fetch origin
-rebase origin
-
-git log
-git tag -a v1.0 -m
-tag v1.0
-
-git status
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
-
-git stat2)git branch feature-branch
-git checkout feature branch
-git add .
-get commit
-gir checkout master 
-git merge
-
-git stash
-git checkout
-stash apply
-
-3)clone fetch merge
-git clone
-git feature branch
-git checkout featurebranch
-fetch origin
-rebase origin
-
-git log
-git tag -a v1.0 -m
-tag v1.0
-2)git branch feature-branch
-git checkout feature branch
-git add .
-get commit
-gir checkout master 
-git merge
-
-git stash
-git checkout
-stash apply
-
-3)clone fetch merge
-git clone
-git feature branch
-git checkout featurebranch
-fetch origin
-rebase origin
-
-git log
-git tag -a v1.0 -m
-tag v1.0
-
-git status
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
-
-git status
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
-us
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
-t -n 5
-
-us
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
-t log
-git -n 5
-
-t -n 5
-
-us
-git log-oneline
-git cherry pick
-
-git commit_id
-git log
-git -n 5
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main() {
+    int fd, ret;
+    char buffer[20];
+
+    // Create a new file
+    fd = creat("example.txt", 0644);
+    if (fd == -1) {
+        perror("creat");
+        exit(EXIT_FAILURE);
+    }
+
+    // Write to the file
+    ret = write(fd, "Hello, World!", 13);
+    if (ret == -1) {
+        perror("write");
+        exit(EXIT_FAILURE);
+    }
+
+    // Close the file
+    ret = close(fd);
+    if (ret == -1) {
+        perror("close");
+        exit(EXIT_FAILURE);
+    }
+
+    // Open the file again
+    fd = open("example.txt", O_RDWR);
+    if (fd == -1) {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+
+    // Move the file cursor to the beginning of the file.dh`
+
+    ret = lseek(fd, 0, SEEK_SET);
+    if (ret == -1) {
+        perror("lseek");
+        exit(EXIT_FAILURE);
+    }
+
+    // Read from the file
+    ret = read(fd, buffer, 13);
+    if (ret == -1) {
+        perror("read");
+        exit(EXIT_FAILURE);
+    }
+    buffer[ret] = '\0'; // Null-terminate the string
+
+    printf("Read from file: %s\n", buffer);
+
+    // Close the file
+    ret = close(fd);
+    if (ret == -1) {
+        perror("close");
+        exit(EXIT_FAILURE);
+    }
+    return 0;
+}
